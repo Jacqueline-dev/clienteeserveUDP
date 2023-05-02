@@ -10,7 +10,7 @@ mensagem = "Olá servidor!"
 
 try:
     print("Cliente:" + mensagem)
-    s.send(mensagem.encode(), (host, 5432))
+    s.sendto(mensagem.encode(), (host, 5432))
 
     dados, servidor = s.recvfrom(4096)
     dados = dados.decode()
